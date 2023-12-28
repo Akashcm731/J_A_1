@@ -1,0 +1,26 @@
+pipeline {
+  agent any
+
+  stages {
+    stage ('Checkout') {
+      steps {
+        git branch: 'main', credentialsId: 'github', url: ''
+      }
+    }
+  stage ('Test') {
+      steps {
+        echo 'This is test stage'
+      }
+    }
+  stage ('Build') {
+      steps {
+        sh 'mvn clean package'
+       }
+    }
+  stage ('Deploy') {
+      steps {
+        sh 'sudo cp target/*.war /opt/tomcat/webapps'
+       }
+    }
+  }
+}
