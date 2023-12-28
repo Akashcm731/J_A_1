@@ -4,7 +4,7 @@ pipeline {
   stages {
     stage ('Checkout') {
       steps {
-        git branch: 'main', credentialsId: 'github', url: ''
+        git branch: 'main', credentialsId: 'github', url: 'https://github.com/Akashcm731/new-java-project.git'
       }
     }
   stage ('Test') {
@@ -14,7 +14,7 @@ pipeline {
     }
   stage ('Build') {
       steps {
-        sh 'mvn clean package'
+        sh 'mvn clean install'
        }
     }
   stage ('Deploy') {
