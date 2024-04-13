@@ -13,7 +13,7 @@ node {
        }
   
   stage ('Deploy') {
-    sh 'sudo cp target/*.jar /opt/tomcat/webapps'
+    sh 'sudo cp target/*.jar /opt/tomcat/apache-tomcat-9.0.68/webapps'
   }
 }
   
