@@ -1,4 +1,4 @@
-node {
+node('java') {
 
    stage ('Checkout') {
     git branch: 'main', credentialsId: 'github', url: 'https://github.com/Akashcm731/new-java-project.git'
